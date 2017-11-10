@@ -1,3 +1,7 @@
+/*NOTE TO TEAM: 
+    We will be using this style for the backend routing, not the style in home.js
+*/
+
 const express = require('express');
 const models = require('../models');
 

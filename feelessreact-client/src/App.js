@@ -2,24 +2,24 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
-class App extends Component {
-  constructor() {
-    super();
-  }
+import { Route, Switch } from 'react-router-dom';
+import Navigation from './Navigation';
+import Home from './container/Home';
+import Dashboard from './container/Dashboard';
+import Login from './container/Login';
 
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+const App =() => (
+      <div>
+
+
+        <main>
+        <Navigation />
+          <Switch>
+            <Route path="/" exact Component={Home} />
+            <Route path="/login" Component={Login} />
+          </Switch>
+        </main>
       </div>
-    );
-  }
-}
+)
 
 export default App;
