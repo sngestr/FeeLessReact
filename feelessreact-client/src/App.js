@@ -4,22 +4,13 @@ import './App.css';
 
 import { Route, Switch } from 'react-router-dom';
 import Navigation from './Navigation';
-import Home from './container/Home';
-import Dashboard from './container/Dashboard';
-import Login from './container/Login';
+import Main from './Main';
 
-const App =() => (
-      <div>
-
-
-        <main>
-        <Navigation />
-          <Switch>
-            <Route path="/" exact Component={Home} />
-            <Route path="/login" Component={Login} />
-          </Switch>
-        </main>
-      </div>
+const App = () => (
+  <div>
+    <Navigation />
+    <Main />
+  </div>   
 )
 
 export default App;
