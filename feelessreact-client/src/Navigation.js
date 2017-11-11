@@ -6,6 +6,7 @@ const Navigation = (props) => {
 		<div>
 			<Link to="/"> Home </Link>
 			<Link to="/login"> Login </Link>
+			<Link to="/dashboard"> Dashboard </Link>
 		</div>
 	);
 }
