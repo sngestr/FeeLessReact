@@ -4,11 +4,12 @@ import Home from './Container/Home';
 import Login from './Container/Login';
 import Dashboard from './Container/Dashboard';
 import SignUp from './Container/SignUp';
+import './Container/stylesheets/Main.css';
 
 
 const Main = () => {
 	return (
-		<div>
+		<div class="main">
 			<main>
 				<Switch>
 					<Route exact path='/' component={Home} />
