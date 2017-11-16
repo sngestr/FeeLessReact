@@ -1,3 +1,5 @@
+//Navigation for the homepage only
+
 import React from 'react';
 import {Link} from 'react-router-dom';
 import './Container/stylesheets/Navigation.css';

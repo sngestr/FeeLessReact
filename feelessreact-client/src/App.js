@@ -8,9 +8,8 @@ import Main from './Main';
 
 const App = () => (
   <div>
-    <Navigation />
     <Main />
-  </div>   
+  </div>
 )
 
 export default App;
