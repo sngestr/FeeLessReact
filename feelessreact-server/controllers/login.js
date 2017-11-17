@@ -17,9 +17,10 @@ const LoginController = {
     });
   },
   create(req, res) {
-    res.json({
-      msg: "Successful POST to '/login' route"
-    });
+    passport.authenticate('local', {
+      successRedirect: '/',
+      failureRedirect: '/login',
+    })(req, res);
   },
   update(req, res) {
     res.json({

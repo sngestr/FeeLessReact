@@ -11,19 +11,19 @@ class RequestForm extends Component {
       <div id="request_form">
         <table>
           <tr>
-            <td>FROM:</td>
+            <td>From:</td>
             <td>
               <input type="text" />
             </td>
 
-            <td>TO:</td>
+            <td>To:</td>
             <td>
               <input type="text" />
             </td>
           </tr>
 
           <tr>
-            <td>AMOUNT:</td>
+            <td>Amount: $</td>
             <td>
               <div>
               <input type="number"/>
@@ -34,7 +34,7 @@ class RequestForm extends Component {
 
             <td>
                 <div id="split_information" class="collapse">
-                  ACCEPT AMOUNT:
+                  Minimum Amount: $
                   <input type="number" />
                 </div>
             </td>
