@@ -7,7 +7,7 @@ import './Container/stylesheets/Navigation.css';
 const Navigation = () => {
 	return (
 		<div class="nav">
-			<Link to="/"> Home </Link>
+			<Link to="/"> FeeLess </Link>
 			<Link to="/login"> Login </Link>
 		</div>
 	);

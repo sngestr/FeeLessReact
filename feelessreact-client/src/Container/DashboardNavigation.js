@@ -5,8 +5,11 @@ import {Link} from 'react-router-dom';
 
 const DashboardNavigation = () => {
   return (
-    <div>
-      dashboard navigation
+    <div id="dash_nav">
+      REQUEST
+      HISTORY
+      PROFILE
+      REVIEW
     </div>
   );
 }
