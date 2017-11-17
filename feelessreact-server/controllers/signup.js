@@ -1,6 +1,8 @@
 const express = require('express');
 const models = require('../models');
 
+const Users = models.Users;
+
 const SignUpController = {
   registerRouter() {
     const router = express.Router();
@@ -21,13 +23,18 @@ const SignUpController = {
       firstName: req.body.firstName,
       lastName: req.body.lastName,
       email: req.body.email,
-      password: req.body.password,
+      password_hash: req.body.password,
     }).then((user) => {
       req.login(user, () =>
-      res.redirect('/profile')
-    );
+        res.json({
+          user,
+          message: "New user created and logged in"
+        })
+      );
   }).catch(() => {
-    res.render('signup');
+    res.json({
+      message: "error creating user"
+    });
   });
   },
   update(req, res) {

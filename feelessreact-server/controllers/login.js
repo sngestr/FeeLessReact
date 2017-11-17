@@ -1,12 +1,13 @@
 const express = require('express');
 const models = require('../models');
+const passport = require('../middlewares/authentication');
 
 const LoginController = {
   registerRouter() {
     const router = express.Router();
 
     router.get('/', this.index);
-    router.post('/', this.create);
+    router.post('/', passport.authenticate('local'), this.create);
     router.put('/:id', this.update);
 
     return router;
@@ -17,10 +18,11 @@ const LoginController = {
     });
   },
   create(req, res) {
-    passport.authenticate('local', {
-      successRedirect: '/',
-      failureRedirect: '/login',
-    })(req, res);
+    console.log('IN /LOGIN CREATE')
+    res.json({
+      message: "YAY logged in",
+      user: req.user,
+    });
   },
   update(req, res) {
     res.json({

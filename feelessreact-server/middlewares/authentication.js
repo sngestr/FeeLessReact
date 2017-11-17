@@ -5,6 +5,7 @@ const LocalStrategy = require('passport-local').Strategy;
 const Users = require('../models').Users;
 
 function passwordsMatch(passwordSubmitted, storedPassword) {
+  console.log('In Middleware/auth, passmatch');
   return bcrypt.compareSync(passwordSubmitted, storedPassword);
 }
 
@@ -12,16 +13,19 @@ passport.use(new LocalStrategy({
     usernameField: 'email',
   },
   (email, password, done) => {
+    console.log('In Middleware/auth, top');
     Users.findOne({
       where: { email },
     }).then((user) => {
-      debugger;
+      // debugger;
+      console.log('In Middleware/auth, then');
+
 
       if(!user) {
         return done(null, false, { message: 'Incorrect email.' });
       }
 
-      if (passwordsMatch(password, user.password) === false) {
+      if (passwordsMatch(password, user.password_hash) === false) {
         console.log('\n\nerror match\n\n')
         return done(null, false, { message: 'Incorrect password.' });
       }
