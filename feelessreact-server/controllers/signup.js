@@ -17,9 +17,18 @@ const SignUpController = {
     });
   },
   create(req, res) {
-    res.json({
-      msg: "Successful POST to '/signup' route"
-    });
+    Users.create({
+      firstName: req.body.firstName,
+      lastName: req.body.lastName,
+      email: req.body.email,
+      password: req.body.password,
+    }).then((user) => {
+      req.login(user, () =>
+      res.redirect('/profile')
+    );
+  }).catch(() => {
+    res.render('signup');
+  });
   },
   update(req, res) {
     res.json({
