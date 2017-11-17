@@ -4,7 +4,7 @@
   font-size: 1.3rem;
   font-weight: bolder;
   font-family: 'Ubuntu', sans-serif;
-  color: #5e5d5d;
+  color: #676767;
 }
 #dashboard-content {
   margin: 0 auto;
@@ -13,6 +13,7 @@
   padding: 15px 10px;
   height: 100%;
   width: 70%;
+  color: #676767;
 }
 #request_button {
   float: right;
