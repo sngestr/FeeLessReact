@@ -1,11 +1,7 @@
-/*NOTE TO TEAM: 
-    We will be using this style for the backend routing, not the style in home.js
-*/
-
 const express = require('express');
 const models = require('../models');
 
-const AltController = {
+const DashboardController = {
   registerRouter() {
     const router = express.Router();
 
@@ -18,27 +14,27 @@ const AltController = {
   },
   index(req, res) {
     res.json({
-      msg: "Successful GET to '/alt' route"
+      msg: "Successful GET to '/dashboard' route"
     });
   },
   create(req, res) {
     res.json({
-      msg: "Successful POST to '/alt' route"
+      msg: "Successful POST to '/dashboard' route"
     });
   },
   update(req, res) {
     res.json({
-      msg: "Successful PUT to '/alt' route",
+      msg: "Successful PUT to '/dashboard' route",
       id: req.params.id
     });
   },
   delete(req, res) {
     res.json({
-      msg: "Successful DELETE to '/alt' route",
+      msg: "Successful DELETE to '/dashboard' route",
       id: req.params.id
     });
   },
 };
 
 
-module.exports = AltController.registerRouter();
+module.exports = DashboardController.registerRouter();

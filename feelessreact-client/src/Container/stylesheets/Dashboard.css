@@ -1,0 +1,26 @@
+#dash_nav {
+  box-shadow: 0px 6px 10px #eeeeec;
+  padding: 20px 0px 10px 300px;
+  font-size: 1.3rem;
+  font-weight: bolder;
+  font-family: 'Ubuntu', sans-serif;
+  color: #676767;
+}
+#dashboard-content {
+  margin: 0 auto;
+  /*border-right: solid 1px #eeeeec;
+  border-left: solid 1px #eeeeec;*/
+  padding: 15px 10px;
+  height: 100%;
+  width: 70%;
+  color: #676767;
+}
+#request_button {
+  float: right;
+  display: block;
+  outline: none;
+  margin: 5px;
+}
+.clear {
+  clear: both;
+}

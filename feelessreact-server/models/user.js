@@ -5,7 +5,6 @@ module.exports = (sequelize, DataTypes) => {
 		email: DataTypes.STRING,
 		password_hash: DataTypes.STRING
 	});
-
 	Users.associate = (models) => {
 		models.Users.hasMany(models.Requests);
 	}

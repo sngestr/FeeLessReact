@@ -11,7 +11,6 @@ module.exports =  (sequelize, DataTypes) => {
 		minimum_amount: DataTypes.DOUBLE,
 		exchange_in_person: DataTypes.BOOLEAN
 	});
-
 	Requests.associate = (models) => {
 		models.Requests.belongsTo(models.Users);
 	}
