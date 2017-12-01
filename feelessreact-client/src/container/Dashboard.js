@@ -37,7 +37,7 @@ class Dashboard extends Component {
 						<div id="dashboard_main" class="clear">
 							<h1> Requests will appear here </h1>
 							<h1> Requests will appear here </h1>
-							<h1> Requests will appear herdsnfkjsnfjnskjdnfkjnskfkjsne </h1>
+							<h1> Requests will appear here :D </h1>
 							<h1> Requests will appear here </h1>
 							<h1> Requests will appear here </h1>
 							<h1> Requests will appear here </h1>

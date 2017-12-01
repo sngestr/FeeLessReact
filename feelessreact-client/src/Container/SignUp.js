@@ -35,8 +35,9 @@ class SignUp extends Component {
 				confirm_password_hash: this.state.confirm_password_hash,
 			}),
 			"headers": {
-				"Content-Type": "application/json"
+				"Content-Type": "application/json",
 			},
+			"credentials": 'include',
 		}).then((res) => {
 			if(res.status != 200) {
 				console.log("error signing up");

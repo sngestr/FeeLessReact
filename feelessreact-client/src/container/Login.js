@@ -29,8 +29,9 @@ class Login extends Component {
 				password: this.state.password,
 			}),
 			headers: {
-    		"Content-Type": "application/json"
+    		"Content-Type": "application/json",
   		},
+  			"credentials": 'include',
 		}).then((res) => {
 			if(res.status != 200) {
 				// login failed, show message, and stay at login form
@@ -54,7 +55,6 @@ class Login extends Component {
 		return (
 			<div>
 				<PageNavigation />
-				<Link to="/dashboard"> Dashboard </Link>
 				<Link to="/signup"> Sign up </Link>
 
 				<br /> <h2> 🐶 login page 🐶 </h2>
