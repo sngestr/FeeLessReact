@@ -6,7 +6,9 @@ import './stylesheets/PageNavigation.css';
 const PageNavigation = () => {
   return (
     <div id="page_nav">
-      <Link to='/'>FeeLess</Link>
+      <Link to='/'>
+        <img src={require('./assets/logo.png')} id="logo"/>
+      </Link>
     </div>
   );
 }

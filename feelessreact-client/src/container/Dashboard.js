@@ -16,7 +16,7 @@ class Dashboard extends Component {
 				<PageNavigation />
 				<DashboardNavigation />
 
-				<div class="wrapper">
+				<div className="wrapper">
 					<div id="dashboard-content">
 						<div>
 						<button id="request_button" data-toggle="collapse" data-target="#request_form_wrapper">Create new request </button>
@@ -27,9 +27,25 @@ class Dashboard extends Component {
 
 						<div id="dashboard_main" class="clear">
 							<h1> Requests will appear here </h1>
+							<h1> Requests will appear here </h1>
+							<h1> Requests will appear herdsnfkjsnfjnskjdnfkjnskfkjsne </h1>
+							<h1> Requests will appear here </h1>
+							<h1> Requests will appear here </h1>
+							<h1> Requests will appear here </h1>
+							<h1> Requests will appear here </h1>
+							<h1> Requests will appear here </h1>
+							<h1> Requests will appear here </h1>
+							<h1> Requests will appear here </h1>
+							<h1> Requests will appear here </h1>
+							<h1> Requests will appear here </h1>
+							<h1> Requests will appear here </h1>
+							<h1> Requests will appear here </h1>
 						</div>
 					</div>
 				</div>
+
+				<img src={require('./assets/left.png')} id="left_image" className="tree_img"/>
+				<img src={require('./assets/right.png')} id="right_image" className="tree_img"/>
 			</div>
 		);
 	}
