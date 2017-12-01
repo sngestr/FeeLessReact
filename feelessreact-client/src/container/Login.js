@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {Link} from 'react-router-dom';
+import {Link, Redirect, Route} from 'react-router-dom';
 import PageNavigation from './PageNavigation';
 import './stylesheets/Login.css';
 
@@ -47,13 +47,13 @@ class Login extends Component {
 	render() {
 		return (
 			<div>
+				<PageNavigation />
+				<Link to="/dashboard"> Dashboard </Link>
+				<Link to="/signup"> Sign up </Link>
+
+				<br /> <h2> 🐶 login page 🐶 </h2>
+
 				<form onSubmit={this.handleSubmit}>
-					<PageNavigation />
-					<Link to="/dashboard"> Dashboard </Link>
-					<Link to="/signup"> Sign up </Link>
-
-					<br /> <h2> 🐶 login page 🐶 </h2>
-
 					<table>
 						<tr>
 							<td> <label for="email_input">Email</label> </td>

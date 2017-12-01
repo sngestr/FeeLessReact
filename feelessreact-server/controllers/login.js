@@ -19,6 +19,7 @@ const LoginController = {
   },
   create(req, res) {
     console.log('IN /LOGIN CREATE')
+    res.sendStatus(200);
     res.json({
       message: "YAY logged in",
       user: req.user,
