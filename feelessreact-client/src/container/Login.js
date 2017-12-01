@@ -9,6 +9,7 @@ class Login extends Component {
 		this.state = {
 			email: '',
 			password: '',
+			isLoggedIn: false,
 		};
 
 		this.handleSubmit = this.handleSubmit.bind(this);
@@ -35,6 +36,7 @@ class Login extends Component {
 				// login failed, show message, and stay at login form
 				console.log('ERROR logging in!')
 			} else {
+				this.setState({isLoggedIn: true});
 				return res.json();
 			}
 		}).then((body) => {
@@ -45,6 +47,10 @@ class Login extends Component {
 	}
 
 	render() {
+		if(this.state.isLoggedIn) {
+			return <Redirect to="/dashboard" />;
+		}
+
 		return (
 			<div>
 				<PageNavigation />

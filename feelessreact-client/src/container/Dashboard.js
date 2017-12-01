@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Link} from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import DashboardNavigation from './DashboardNavigation';
 import PageNavigation from './PageNavigation';
 import RequestForm from './RequestForm';
@@ -14,6 +14,8 @@ class Dashboard extends Component {
 		fetch('/dashboard')
 		.then(result => {
 			return result.json();
+		}).then(data => {
+
 		})
 	}
 
