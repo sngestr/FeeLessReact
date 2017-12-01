@@ -6,13 +6,14 @@ class RequestForm extends Component {
     super();
     this.state = {
       matched_user_id: null,
-      transaction_amt: 0,
+      transaction_amt: null,
       status: false, 
       from_country: '',
       to_country: '',
       split_money: false,
-      minimum_amount: 0,
-      exchange_in_person: false
+      minimum_amount: null,
+      exchange_in_person: false,
+      currency: '$',
     }
 
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -25,7 +26,7 @@ class RequestForm extends Component {
   }
 
   handleSubmit(event) {
-    fetch('dashboard', {
+    fetch('/dashboard', {
         method: 'POST',
         body: JSON.stringify({
           matched_user_id: this.state.matched_user_id,
@@ -69,8 +70,8 @@ class RequestForm extends Component {
             <option value="France">France</option>
           </select>
 
-          <label for="transaction_amt">Transaction Amount: </label>
-          <input type="number" id="transaction_amt" name="transaction_amt" value={this.state.transaction_amt} onChange={this.handleChange} />
+          <label for="transaction_amt">Transaction Amount: {this.state.currency} </label>
+          <input type="number" id="transaction_amt" name="transaction_amt" placeholder="Enter Amount" min="0" step="0.01" value={this.state.transaction_amt} onChange={this.handleChange} />
 
 
           <input type="submit" />

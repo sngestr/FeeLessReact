@@ -10,6 +10,13 @@ class Dashboard extends Component {
 		super();
 	}
 
+	componentWillMount() {
+		fetch('/dashboard')
+		.then(result => {
+			return result.json();
+		})
+	}
+
 	render() {
 		return(
 			<div>

@@ -18,7 +18,11 @@ const DashboardController = {
     });
   },
   create(req, res) {
+    // req.user.createRequest({
+
+    // })
     models.Requests.create({
+      UserId: req.user.id,
       matched_user_id: req.body.matched_user_id,
       // matched_date: DataTypes.DATE,
       transaction_amt: req.body.transaction_amt,

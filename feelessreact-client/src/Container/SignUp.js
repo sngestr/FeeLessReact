@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {Link} from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import PageNavigation from './PageNavigation';
 import './stylesheets/SignUp.css';
 
@@ -12,6 +12,7 @@ class SignUp extends Component {
 			email: '',
 			password_hash: '',
 			confirm_password_hash: '',
+			isLoggedIn: false,
 		};
 
 		this.handleSubmit = this.handleSubmit.bind(this);
@@ -40,7 +41,9 @@ class SignUp extends Component {
 			if(res.status != 200) {
 				console.log("error signing up");
 			} else {
+				this.setState({isLoggedIn: true});
 				console.log("signed up!");
+
 			}
 		})
 
@@ -48,6 +51,11 @@ class SignUp extends Component {
 	}
 
 	render() {
+		if(this.state.isLoggedIn) {
+			return <Redirect to="/dashboard" />;
+		}
+
+
 		return (
 			<div>
 				<PageNavigation />
