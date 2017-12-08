@@ -1,1 +1,61 @@
+img.bg {
+  /* Set rules to fill background */
+  min-height: 100%;
+  min-width: 1024px;
 
+  /* Set up proportionate scaling */
+  width: auto;
+  height: 100%;
+
+  /* Set up positioning */
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  background: linear-gradient(#b7e1cf, #fdffd8);
+}
+
+#homepage-header-content h1 {
+	font-family: 'Nunito', sans-serif;
+	font-weight: bold;
+	font-size: 6rem;
+	color: #fff;
+}
+
+#homepage-header-content p {
+	font-family: 'Nunito', sans-serif;
+	font-size: 1.4rem;
+	font-weight: bold;
+	color: #9dbeb0;
+}
+
+#homepage-header-content {
+	position: absolute;
+	text-align: center;
+	left: 31%;
+	top: 31%;
+}
+
+.button {
+    font-size: 3rem;
+    font-family: 'Economica', sans-serif;
+    font-weight: lighter;
+    background-color: #929292;
+    color: #fff;
+    padding: 5px 30px;
+    border-radius: 8px;
+    border-top: 1px solid #CCCCCC;
+    border-right: 1px solid #333333;
+    border-bottom: 1px solid #333333;
+    border-left: 1px solid #CCCCCC;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 7px 7px #f3d9d9;
+    transition: .2s;
+}
+
+.button:hover {
+	text-decoration: none;
+	color: white;
+	box-shadow: 10px 10px #e4c1c1;
+}

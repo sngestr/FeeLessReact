@@ -29,13 +29,11 @@ const SignUpController = {
         res.status(200).json({
           user,
           message: "New user created and logged in",
-          status: 200
         })
       );
   }).catch(() => {
     res.status(400).json({
       message: "error creating user",
-      status: 400,
     });
   });
   },

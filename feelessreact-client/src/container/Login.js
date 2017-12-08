@@ -38,7 +38,6 @@ class Login extends Component {
 				console.log('ERROR logging in!')
 			} else {
 				this.setState({isLoggedIn: true});
-				return res.json();
 			}
 		}).then((body) => {
 			console.log(body);

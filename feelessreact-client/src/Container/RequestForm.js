@@ -51,7 +51,7 @@ class RequestForm extends Component {
         }
     }).then((body) => {
         console.log(body);
-    })
+    });
 
     event.preventDefault();
   }

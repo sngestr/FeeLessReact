@@ -1,13 +1,14 @@
 const express = require('express');
 const models = require('../models');
-const passport = require('../middlewares/authentication');
 
-const LoginController = {
+const Users = models.Users;
+
+const LogoutController = {
   registerRouter() {
     const router = express.Router();
 
     router.get('/', this.index);
-    router.post('/', passport.authenticate('local'), this.create);
+    router.post('/', this.create);
     router.put('/:id', this.update);
     router.delete('/:id', this.delete);
 
@@ -15,30 +16,28 @@ const LoginController = {
   },
   index(req, res) {
     res.json({
-      msg: "Successful GET to '/login' route"
+      msg: "Successful GET to '/logout' route"
     });
   },
   create(req, res) {
-    console.log('IN /LOGIN CREATE')
-    res.sendStatus(200);
-    res.json({
-      message: "YAY logged in",
-      user: req.user,
+  	req.logout();
+    res.status(200).json({
+      msg: "Logged out!",
     });
   },
   update(req, res) {
     res.json({
-      msg: "Successful PUT to '/login' route",
+      msg: "Successful PUT to '/logout' route",
       id: req.params.id
     });
   },
   delete(req, res) {
     res.json({
-      msg: "Successful DELETE to '/alt' route",
+      msg: "Successful DELETE to '/logout' route",
       id: req.params.id
     });
   },
 };
 
 
-module.exports = LoginController.registerRouter();
+module.exports = LogoutController.registerRouter();

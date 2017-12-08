@@ -13,14 +13,19 @@ const DashboardController = {
     return router;
   },
   index(req, res) {
-    res.json({
-      msg: "Successful GET to '/dashboard' route"
+    models.Requests.findAll({
+      where: {
+        UserId: 1,
+      }
+    }).then((allRequests) => {
+      res.json({
+        requests: allRequests,
+      });
     });
+
+
   },
   create(req, res) {
-    // req.user.createRequest({
-
-    // })
     models.Requests.create({
       UserId: req.user.id,
       matched_user_id: req.body.matched_user_id,
