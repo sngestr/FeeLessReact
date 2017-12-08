@@ -13,14 +13,37 @@ const DashboardController = {
     return router;
   },
   index(req, res) {
-    res.json({
-      msg: "Successful GET to '/dashboard' route"
+    models.Requests.findAll({
+      where: {
+        UserId: 1,
+      }
+    }).then((allRequests) => {
+      res.json({
+        requests: allRequests,
+      });
     });
+
+
   },
   create(req, res) {
-    res.json({
-      msg: "Successful POST to '/dashboard' route"
-    });
+    models.Requests.create({
+      UserId: req.user.id,
+      matched_user_id: req.body.matched_user_id,
+      // matched_date: DataTypes.DATE,
+      transaction_amt: req.body.transaction_amt,
+      status: req.body.status,
+      from_country: req.body.from_country,
+      to_country: req.body.to_country,
+      split_money: req.body.split_money,
+      minimum_amount: req.body.minimum_amount,
+      exchange_in_person: req.body.exchange_in_person,
+    })
+    .then((request) => {
+      res.sendStatus(200);
+    })
+    .catch(() => {
+      res.sendStatus(400);
+    })
   },
   update(req, res) {
     res.json({

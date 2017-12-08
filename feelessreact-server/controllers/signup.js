@@ -20,20 +20,20 @@ const SignUpController = {
   },
   create(req, res) {
     Users.create({
-      firstName: req.body.firstName,
-      lastName: req.body.lastName,
+      first_name: req.body.first_name,
+      last_name: req.body.last_name,
       email: req.body.email,
-      password_hash: req.body.password,
+      password_hash: req.body.password_hash,
     }).then((user) => {
       req.login(user, () =>
-        res.json({
+        res.status(200).json({
           user,
-          message: "New user created and logged in"
+          message: "New user created and logged in",
         })
       );
   }).catch(() => {
-    res.json({
-      message: "error creating user"
+    res.status(400).json({
+      message: "error creating user",
     });
   });
   },

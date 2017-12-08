@@ -1,3 +1,21 @@
 .nav {
-	background-color: #e9f0ea;
+	padding: 20px;
+}
+.move-right {
+	position: absolute;
+	right: 0;
+}
+.homepage-link {
+	font-family: 'Economica', sans-serif;
+	font-size: 1.7rem;
+	text-transform: uppercase;
+	color: #fff;
+	transition: .2s;
+	margin-right: 100px;
+}
+
+.homepage-link:hover {
+	text-decoration: none;
+	color: #fff;
+	box-shadow: 0px 5px #87b9a4;
 }

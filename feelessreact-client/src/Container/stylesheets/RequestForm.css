@@ -1,9 +1,7 @@
 #request_form {
-  /*background-color: #e9f0ea;*/
+  background-color: #e9f0ea;
   padding: 10px;
   border-radius: 5px;
-  border: solid 2px #676767;
-  color: #acd9c6;
   font-size: 1.1rem;
   font-weight: bold;
 }
