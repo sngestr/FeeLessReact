@@ -26,16 +26,14 @@ const SignUpController = {
       password_hash: req.body.password_hash,
     }).then((user) => {
       req.login(user, () =>
-        res.json({
+        res.status(200).json({
           user,
           message: "New user created and logged in",
-          status: 200
         })
       );
   }).catch(() => {
-    res.json({
+    res.status(400).json({
       message: "error creating user",
-      status: 400,
     });
   });
   },

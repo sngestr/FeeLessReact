@@ -9,7 +9,7 @@ import './Container/stylesheets/Main.css';
 
 const Main = () => {
 	return (
-		<div class="main">
+		<div className="main">
 			<main>
 				<Switch>
 					<Route exact path='/' component={Home} />
