@@ -11,9 +11,9 @@ const Navigation = () => {
 		        <img src={require('./Container/assets/logo-white.png')} id="logo"/>
 		    </Link>
 		    <div className="move-right">
-				<Link to="/login" className="homepage-link"> Login </Link>
 				<Link to="/" className="homepage-link"> About </Link>
 				<Link to="/" className="homepage-link"> Help </Link>
+				<Link to="/login" className="homepage-link"> Login </Link>
 			</div>
 		</div>
 	);

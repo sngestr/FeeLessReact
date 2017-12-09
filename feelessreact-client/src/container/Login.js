@@ -54,7 +54,6 @@ class Login extends Component {
 		return (
 			<div>
 				<PageNavigation />
-				<Link to="/signup"> Sign up </Link>
 
 				<br /> <h2> 🐶 login page 🐶 </h2>
 
@@ -73,6 +72,7 @@ class Login extends Component {
 
 					<input type="submit" />
 				</form>
+				<Link to="/signup"> Don't have an account? Sign up </Link>
 			</div>
 
 		);

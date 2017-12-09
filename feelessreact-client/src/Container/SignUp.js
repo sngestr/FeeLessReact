@@ -60,8 +60,6 @@ class SignUp extends Component {
 		return (
 			<div>
 				<PageNavigation />
-				<Link to="/dashboard">Dashboard</Link>
-				<Link to="/login">Login</Link>
 
 				<br /> <h2> 🐶 sign up page 🐶 </h2>
 
@@ -95,6 +93,7 @@ class SignUp extends Component {
 
 					<input type="submit" />
 				</form>
+				<Link to="/login">Already have an account? Login</Link>
 			</div>
 		);
 	}

@@ -20,6 +20,7 @@ const LogoutController = {
     });
   },
   create(req, res) {
+    console.log("yay logout!");
   	req.logout();
     res.status(200).json({
       msg: "Logged out!",
