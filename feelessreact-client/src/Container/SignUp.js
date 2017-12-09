@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { Link, Redirect } from 'react-router-dom';
 import PageNavigation from './PageNavigation';
+
+import Navigation from '../Navigation';
 import './stylesheets/SignUp.css';
 
 class SignUp extends Component {
@@ -59,14 +61,22 @@ class SignUp extends Component {
 
 		return (
 			<div>
-				<PageNavigation />
+				{/*<PageNavigation />*/}
+
+				{/*The background image for the signup page:*/}
+				<img src={require('./assets/feelessSignup.png')} className="bg" />
+				<Navigation />
+
+				
 				<Link to="/dashboard">Dashboard</Link>
 				<Link to="/login">Login</Link>
-
+				
 				<br /> <h2> 🐶 sign up page 🐶 </h2>
 
 				<form onSubmit={this.handleSubmit}>
-					<table>
+
+					<table id = "table_signup">
+				
 						<tr>
 							<td> <label for="fname_input">First Name</label> </td>
 							<td> <input type="text" id="fname_input" value={this.state.firstName} name="first_name" onChange={this.handleChange} /> </td>
