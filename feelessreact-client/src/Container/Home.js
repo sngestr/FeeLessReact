@@ -1,16 +1,23 @@
 import React, { Component } from 'react';
-import './stylesheets/Home.css';
+import ReactDOM from "react-dom"; // Rendering engine 
+
+import './stylesheets/Home.css'; // CSS file for the the style
 import {Link} from 'react-router-dom';
 import Navigation from '../Navigation';
 
-class Home extends Component {
+//class Home extends Component {
+class Home extends React.Component { // Everything in react is a component. 
+
 	constructor() {
-		super();
+		super(); // Must be the first command in the react component.
 	}
 
-	render() {
+	render() { // A render method for the component.
+
 		return (
+
 			<div id="home_component">
+
 				<img src={require('./assets/homebg.png')} className="bg" />
 				<Navigation />
 
@@ -19,6 +26,7 @@ class Home extends Component {
 					<p>Enjoy feeless international transactions and start saving today</p>
 					<Link to="/signup" className="button"> Sign up</Link>
 				</div>
+
 			</div>
 		);
 	}

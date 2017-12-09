@@ -2,9 +2,13 @@ import React, { Component } from 'react';
 import {Link, Redirect, Route} from 'react-router-dom';
 import PageNavigation from './PageNavigation';
 import './stylesheets/Login.css';
+import Navigation from '../Navigation';
+import './stylesheets/Login.css'; // CSS file for the the style
 
 class Login extends Component {
+	
 	constructor() {
+
 		super();
 		this.state = {
 			email: '',
@@ -12,6 +16,7 @@ class Login extends Component {
 			isLoggedIn: false,
 		};
 
+		{/*The handler for the input from the user:*/}
 		this.handleSubmit = this.handleSubmit.bind(this);
 		this.handleChange = this.handleChange.bind(this);
 	}
@@ -53,28 +58,36 @@ class Login extends Component {
 
 		return (
 			<div>
-				<PageNavigation />
-				<Link to="/signup"> Sign up </Link>
+				
+				{/*The background image for the login page:*/}
+				<img src={require('./assets/feelessLogin.png')} className="bg" />
+				<Navigation />
+				
+				{/*<PageNavigation />  Do we need that here?*/}
 
-				<br /> <h2> 🐶 login page 🐶 </h2>
+				<h2> 🐶 Login Page 🐶 </h2>
 
 				<form onSubmit={this.handleSubmit}>
-					<table>
+
+					<table id="table"> 
 						<tr>
-							<td> <label for="email_input">Email</label> </td>
+							{/*<td> <label for="email_input">Email</label> </td>*/}
 							<td> <input type="email" id="email_input" name="email" value={this.state.email} onChange={this.handleChange}/> </td>
 						</tr>
 
 						<tr>
-							<td> <label for="password_input">Password</label> </td>
+							{/*<td> <label for="password_input">Password</label> </td>*/}
 							<td> <input type="password" id="password_input" name="password" value={this.state.password} onChange={this.handleChange} /> </td>
 						</tr>
 					</table>
 
-					<input type="submit" />
+					<input type="submit" id="submit_request"/>
+
+					{/*The signup link has to be at the buttom*/}
+					<Link to="/signup"> Sign up </Link>
+
 				</form>
 			</div>
-
 		);
 	}
 }

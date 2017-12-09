@@ -1,7 +1,7 @@
 {
   "development": {
     "username": "ctp_user",
-    "password": "ctp_pass",
+    "password": "ctp_user",
     "database": "feeless_development",
     "host": "127.0.0.1",
     "dialect": "postgresql"
