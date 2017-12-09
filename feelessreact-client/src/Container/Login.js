@@ -84,7 +84,7 @@ class Login extends Component {
 					<input type="submit" id="submit_request"/>
 
 					{/*The signup link has to be at the buttom*/}
-					<Link to="/signup"> Sign up </Link>
+					<Link to="/signup" id="signup_link"> _______ </Link>
 
 				</form>
 			</div>

@@ -73,7 +73,12 @@ h2{
   border: none;
 }
 
-
+#signup_link{
+  
+    position: relative;
+    left: 955px;
+    top: 295px;
+}
 
 
 
