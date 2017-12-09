@@ -7,12 +7,12 @@ class SignUp extends Component {
 	constructor() {
 		super();
 		this.state = {
-			first_name: '',
-			last_name: '',
-			email: '',
-			password_hash: '',
-			confirm_password_hash: '',
-			isLoggedIn: false,
+				first_name: '',
+				last_name: '',
+				email: '',
+				password_hash: '',
+				confirm_password_hash: '',
+				isLoggedIn: false,
 		};
 
 		this.handleSubmit = this.handleSubmit.bind(this);
@@ -26,26 +26,26 @@ class SignUp extends Component {
 
 	handleSubmit(event) {
 		fetch('/signup', {
-			method: 'POST',
-			body: JSON.stringify({
-				first_name: this.state.first_name,
-				last_name: this.state.last_name,
-				email: this.state.email,
-				password_hash: this.state.password_hash,
-				confirm_password_hash: this.state.confirm_password_hash,
-			}),
-			"headers": {
-				"Content-Type": "application/json",
-			},
-			"credentials": 'include',
+				method: 'POST',
+				body: JSON.stringify({
+					first_name: this.state.first_name,
+					last_name: this.state.last_name,
+					email: this.state.email,
+					password_hash: this.state.password_hash,
+					confirm_password_hash: this.state.confirm_password_hash,
+				}),
+				"headers": {
+					"Content-Type": "application/json",
+				},
+				"credentials": 'include',
 		}).then((res) => {
-			if(res.status != 200) {
-				console.log("error signing up");
-			} else {
-				this.setState({isLoggedIn: true});
-				console.log("signed up!");
+				if(res.status != 200) {
+					console.log("error signing up");
+				} else {
+					this.setState({isLoggedIn: true});
+					console.log("signed up!");
 
-			}
+				}
 		})
 
 		event.preventDefault();
