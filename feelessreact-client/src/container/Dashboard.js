@@ -27,6 +27,7 @@ class Dashboard extends Component {
 		this.state = {
 				requests: [],
 				isLoggedOut: false,
+				isLoggedIn: true,
 				matched_user_id: null,
 		        transaction_amt: null,
 		        status: false, 
@@ -43,12 +44,38 @@ class Dashboard extends Component {
 		this.logout = this.logout.bind(this);
 		this.handleSubmit = this.handleSubmit.bind(this);
         this.handleChange = this.handleChange.bind(this);
+        this.checkIfLoggedIn = this.checkIfLoggedIn.bind(this);
 	}
 
-	componentWillMount(){
-		this.getUserRequests();
+	componentWillMount() {
+		this.checkIfLoggedIn();
 	}
 
+	componentDidMount() {
+    	if(this.state.isLoggedIn){
+			this.getUserRequests();
+		}
+    }
+
+	checkIfLoggedIn() {
+		fetch('/login', {
+			credentials: 'include'
+		})
+		.then((res) => {
+			if(res.status !== 200) {
+				this.setState({
+					isLoggedIn: false,
+				}, 
+				this.findRoutes);
+			} else {
+				console.log("logged in!!!!!");
+				this.setState({
+					isLoggedIn: true,
+				},
+				this.findRoutes);
+			}
+		});
+	}
 	getUserRequests() {
 		fetch('/dashboard', {
   			credentials: 'include'
@@ -80,7 +107,7 @@ class Dashboard extends Component {
 	        	},
 	          	"credentials": 'include',
     	}).then((res) => {
-		        if(res.state !== 200) {
+		        if(res.status !== 200) {
 		          console.log("Could not log out");
 		        } else {
 		        	this.setState({
@@ -130,6 +157,9 @@ class Dashboard extends Component {
 		/*Redirect when user is not logged in*/
 		if(this.state.isLoggedOut){
 			return <Redirect to="/" />
+		}
+		if(!this.state.isLoggedIn) {
+			return <Redirect to="/login" />
 		}
 
 		return(

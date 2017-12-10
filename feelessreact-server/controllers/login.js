@@ -14,9 +14,11 @@ const LoginController = {
     return router;
   },
   index(req, res) {
-        res.json({
-          msg: "Successful GET to '/login' route"
-        });
+        if(req.user) {
+          res.sendStatus(200);
+        } else {
+          res.sendStatus(400);
+        }
   },
   create(req, res) {
         res.status(200).json({
