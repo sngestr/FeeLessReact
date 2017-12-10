@@ -27,7 +27,7 @@ const DashboardController = {
         models.Requests.create({
               UserId: req.user.id,
               matched_user_id: req.body.matched_user_id,
-              // matched_date: DataTypes.DATE,
+              request_date: req.body.request_date,
               transaction_amt: req.body.transaction_amt,
               status: req.body.status,
               from_country: req.body.from_country,

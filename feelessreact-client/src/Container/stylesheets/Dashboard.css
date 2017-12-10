@@ -17,8 +17,6 @@
 }
 #dashboard-content {
   margin: 0 auto;
-  /*border-right: solid 1px #eeeeec;
-  border-left: solid 1px #eeeeec;*/
   padding: 15px 10px;
   height: 100%;
   width: 70%;
@@ -30,9 +28,24 @@
   display: block;
   outline: none;
   margin: 5px;
+  border: none;
 }
 .clear {
   clear: both;
+}
+#request_button span {
+  margin-right: 10px;
+  font-family: 'Nunito', sans-serif;
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: #676767;
+}
+#request_button:hover {
+  cursor: pointer;
+}
+.icon_size {
+  width: 40px;
+  height: auto;
 }
 /* ===== Dashboard tree images ===== */
 .tree_img {

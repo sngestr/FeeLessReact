@@ -28,6 +28,7 @@ class Dashboard extends Component {
 				requests: [],
 				isLoggedIn: true,
 				matched_user_id: null,
+				request_date: new Date(),
 		        transaction_amt: null,
 		        status: false, 
 		        from_country: '',
@@ -107,6 +108,7 @@ class Dashboard extends Component {
 		        method: 'POST',
 		        body: JSON.stringify({
 		          matched_user_id: this.state.matched_user_id,
+		          request_date: this.state.request_date,
 		          transaction_amt: this.state.transaction_amt,
 		          status: this.state.status,
 		          from_country: this.state.from_country,
@@ -150,8 +152,12 @@ class Dashboard extends Component {
 				{/*  Dashboard  */}
 				<div className="wrapper">
 					<div id="dashboard-content">
+
+						{/* Create new request button */}
 						<div>
-						<button id="request_button" data-toggle="collapse" data-target="#request_form_wrapper">Create new request </button>
+						<button id="request_button" data-toggle="collapse" data-target="#request_form_wrapper">
+							<span> Create new request </span>
+							<img src={require('./assets/create_request_btn.png')} className="icon_size"/> </button>
 						</div>
 
 
