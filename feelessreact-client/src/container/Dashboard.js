@@ -196,8 +196,10 @@ class Dashboard extends Component {
 				</div>
 
 				{/*  Dashboard side images  */}
-				<img src={require('./assets/left.png')} id="left_image" className="tree_img"/>
-				<img src={require('./assets/right.png')} id="right_image" className="tree_img"/>
+				<div className="d-none d-lg-block">
+					<img src={require('./assets/left.png')} id="left_image" className="tree_img"/>
+					<img src={require('./assets/right.png')} id="right_image" className="tree_img"/>
+				</div>
 				{/*  End Dashboard side images  */}
 
 			</div>
