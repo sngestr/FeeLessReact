@@ -24,18 +24,6 @@ h2{
   font-size: 2rem;
   color: #9dbeb0;
   text-align: center;
-
-  50% { opacity: 1; } /* Turn off */
-  50.001% { opacity: 0.4; }
-
-  /* Keep off state for a short period */
-
-  52.999% { opacity: 0.4; } /* Turn back on */
-  53% { opacity: 1; }
-  /*text-align: center;
-  text-shadow: 3px 2px gray;
-  color: #9dbeb0;
-  font-size:*/ 
 }
 
 #table{
