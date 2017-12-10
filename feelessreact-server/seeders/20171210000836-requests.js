@@ -18,22 +18,8 @@ module.exports = {
       minimum_amount: null,
       exchange_in_person: false,
       createdAt: new Date(),
-      UpdatedAt: new Date(),
+      updatedAt: new Date(),
       UserId: 1,
-    }, {
-      matched_user_id: 1,
-      request_date: new Date(),
-      matched_date: new Date(),
-      transaction_amt: 9.50',
-      status: true,
-      from_country: 'United States',
-      to_country: 'France',
-      split_money: true,
-      minimum_amount: 3.00,
-      exchange_in_person: false,
-      createdAt: new Date(),
-      UpdatedAt: new Date(),
-      UserId: 3,
     }, {
       matched_user_id: null,
       request_date: new Date(),
@@ -46,7 +32,7 @@ module.exports = {
       minimum_amount: null,
       exchange_in_person: false,
       createdAt: new Date(),
-      UpdatedAt: new Date(),
+      updatedAt: new Date(),
       UserId: 4,
     }, {
       matched_user_id: null,
@@ -60,7 +46,7 @@ module.exports = {
       minimum_amount: 400,
       exchange_in_person: true,
       createdAt: new Date(),
-      UpdatedAt: new Date(),
+      updatedAt: new Date(),
       UserId: 10,
     }, {
       matched_user_id: 7,
@@ -74,7 +60,7 @@ module.exports = {
       minimum_amount: null,
       exchange_in_person: true,
       createdAt: new Date(),
-      UpdatedAt: new Date(),
+      updatedAt: new Date(),
       UserId: 11,
     }, {
       matched_user_id: 11,
@@ -88,7 +74,7 @@ module.exports = {
       minimum_amount: null,
       exchange_in_person: true,
       createdAt: new Date(),
-      UpdatedAt: new Date(),
+      updatedAt: new Date(),
       UserId: 7,
     }, {
       matched_user_id: 3,
@@ -102,7 +88,7 @@ module.exports = {
       minimum_amount: 200,
       exchange_in_person: false,
       createdAt: new Date(),
-      UpdatedAt: new Date(),
+      updatedAt: new Date(),
       UserId: 5,
     }, {
       matched_user_id: 5,
@@ -116,7 +102,7 @@ module.exports = {
       minimum_amount: null,
       exchange_in_person: false,
       createdAt: new Date(),
-      UpdatedAt: new Date(),
+      updatedAt: new Date(),
       UserId: 3,
     }, {
       matched_user_id: null,
@@ -130,7 +116,7 @@ module.exports = {
       minimum_amount: 100,
       exchange_in_person: false,
       createdAt: new Date(),
-      UpdatedAt: new Date(),
+      updatedAt: new Date(),
       UserId: 3,
     }, {
       matched_user_id: null,
@@ -144,7 +130,7 @@ module.exports = {
       minimum_amount: null,
       exchange_in_person: false,
       createdAt: new Date(),
-      UpdatedAt: new Date(),
+      updatedAt: new Date(),
       UserId: 6,
     }], {});
   },
