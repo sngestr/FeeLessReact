@@ -166,29 +166,37 @@ class Dashboard extends Component {
 
 							<div id="request_form">
 						        <form onSubmit={this.handleSubmit}>
-
-						            <label for="from_country"> From Country: </label>
+						        {/*  From country: Country sending money from */}
+						            <label for="from_country" className="tool_tip"> From Country: 
+						            	<span className="tool_tip_text">This is the country that you're sending money from.</span>
+						            </label>
 						            <input list="countries" id="from_country" name="from_country" value={this.state.from_country} onChange={this.handleChange} required />
 						            <datalist id="countries">
-						              <option value="France" />
-						              <option value="England" />
-						              <option value="Poland" />
-						              <option value="South America" />
-						              <option value="India" />
+							              <option value="France" />
+							              <option value="England" />
+							              <option value="Poland" />
+							              <option value="South America" />
+							              <option value="India" />
 						            </datalist>
 
-						          <label for="to_country"> To Country: </label>
+						        {/*  To Country: Country sending money to  */}
+						          <label for="to_country" className="tool_tip"> To Country: 
+						          		<span className="tool_tip_text">This is the country that you want to send money to.</span>
+						          </label>
 						            <input list="countries" id="to_country" name="to_country" value={this.state.to_country} onChange={this.handleChange} required/>
 						            <datalist id="countries">
-						              <option value="United States" />
-						              <option value="France" />
-						              <option value="England" />
-						              <option value="Poland" />
-						              <option value="South America" />
-						              <option value="India" />
+							              <option value="United States" />
+							              <option value="France" />
+							              <option value="England" />
+							              <option value="Poland" />
+							              <option value="South America" />
+							              <option value="India" />
 						            </datalist>
 
-						          <label for="transaction_amt">Transaction Amount: {this.state.currency} </label>
+						        {/* Transaction Amount: Amount you want to send to the 'to country' */ }
+						          <label for="transaction_amt" className="tool_tip">Transaction Amount: {this.state.currency} 
+						          		<span className="tool_tip_text">This is the amount of money you want to send.</span>
+						          </label>
 						          <input type="number" id="transaction_amt" name="transaction_amt" placeholder="Enter Amount" min="0" step="0.01" value={this.state.transaction_amt} onChange={this.handleChange} />
 
 
