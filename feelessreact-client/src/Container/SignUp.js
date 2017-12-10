@@ -6,6 +6,7 @@ import Navigation from '../Navigation';
 import './stylesheets/SignUp.css';
 
 class SignUp extends Component {
+
 	constructor() {
 		super();
 		this.state = {
@@ -58,18 +59,16 @@ class SignUp extends Component {
 			return <Redirect to="/dashboard" />;
 		}
 
-
 		return (
 			<div>
 				{/*<PageNavigation />*/}
 
 				{/*The background image for the signup page:*/}
 				<img src={require('./assets/feelessSignup.png')} className="bg" />
-				<Navigation />
-
+				<Navigation />	
 				
 				{/*Dashboard and login links:*/}
-				<Link to="/dashboard">Dashboard</Link>
+				<Link to="/dashboard" id = "dashboard_id">________________________</Link>
 				<Link to="/login" id="login_id">_________</Link>
 				
 				<br /> <h2> 🐶 sign up page 🐶 </h2>
