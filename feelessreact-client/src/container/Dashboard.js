@@ -26,7 +26,6 @@ class Dashboard extends Component {
 		super();
 		this.state = {
 				requests: [],
-				isLoggedOut: false,
 				isLoggedIn: true,
 				matched_user_id: null,
 		        transaction_amt: null,
@@ -41,7 +40,6 @@ class Dashboard extends Component {
 		};
 
 		this.getUserRequests = this.getUserRequests.bind(this);
-		this.logout = this.logout.bind(this);
 		this.handleSubmit = this.handleSubmit.bind(this);
         this.handleChange = this.handleChange.bind(this);
         this.checkIfLoggedIn = this.checkIfLoggedIn.bind(this);
@@ -99,25 +97,6 @@ class Dashboard extends Component {
 			// console.log(this.state.requests);
 	}
 
-	logout() {
-		fetch('/logout', {
-		        method: 'POST',
-	        	headers: {
-	          		"Content-type": "application/json",
-	        	},
-	          	"credentials": 'include',
-    	}).then((res) => {
-		        if(res.status !== 200) {
-		          console.log("Could not log out");
-		        } else {
-		        	this.setState({
-		        		isLoggedOut: true,
-		        	})
-		          console.log("Log out successful!");
-		        }
-    	});
-	}
-
 	handleChange(event) {
 	    const fieldName = event.target.name;
 	    this.setState({[fieldName]: event.target.value});
@@ -167,7 +146,6 @@ class Dashboard extends Component {
 				{/*  Navigation  */}
 				<PageNavigation />
 				<DashboardNavigation />
-				<button onClick={this.logout}>Logout</button>
 
 				{/*  Dashboard  */}
 				<div className="wrapper">
