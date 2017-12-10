@@ -50,12 +50,12 @@ img.bg {
     border-left: 1px solid #CCCCCC;
     text-transform: uppercase;
     letter-spacing: 1px;
-    box-shadow: 7px 7px #f3d9d9;
+    box-shadow: 0px 10px #c1d897;
     transition: .2s;
 }
 
 .button:hover {
 	text-decoration: none;
 	color: white;
-	box-shadow: 10px 10px #e4c1c1;
+	box-shadow: 0px 10px #adc286;
 }
