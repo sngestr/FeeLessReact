@@ -50,7 +50,9 @@ class Dashboard extends Component {
 	}
 
 	getUserRequests() {
-		fetch('/dashboard')
+		fetch('/dashboard', {
+  			credentials: 'include'
+			})
 			.then((response) => {
 				return response.json();
 			})
@@ -197,7 +199,7 @@ class Dashboard extends Component {
 				<img src={require('./assets/left.png')} id="left_image" className="tree_img"/>
 				<img src={require('./assets/right.png')} id="right_image" className="tree_img"/>
 				{/*  End Dashboard side images  */}
-				
+
 			</div>
 		);
 	}

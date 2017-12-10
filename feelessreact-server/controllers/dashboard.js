@@ -15,7 +15,7 @@ const DashboardController = {
   index(req, res) {
         models.Requests.findAll({
             where: {
-              UserId: 1,
+              UserId: req.user.id,
             }
         }).then((allRequests) => {
             res.json({
