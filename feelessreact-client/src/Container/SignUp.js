@@ -71,7 +71,7 @@ class SignUp extends Component {
 				<Link to="/dashboard" id = "dashboard_id">________________________</Link>
 				<Link to="/login" id="login_id">_________</Link>
 				
-				<br /> <h2> 🐶 sign up page 🐶 </h2>
+				<br /> <h2> 🐶 Signup page 🐶 </h2>
 
 				<form onSubmit={this.handleSubmit}>
 
