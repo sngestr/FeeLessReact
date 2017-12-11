@@ -26,8 +26,9 @@ class Dashboard extends Component {
 		super();
 		this.state = {
 				requests: [],
-				isLoggedOut: false,
+				isLoggedIn: true,
 				matched_user_id: null,
+				request_date: new Date(),
 		        transaction_amt: null,
 		        status: false, 
 		        from_country: '',
@@ -40,15 +41,40 @@ class Dashboard extends Component {
 		};
 
 		this.getUserRequests = this.getUserRequests.bind(this);
-		this.logout = this.logout.bind(this);
 		this.handleSubmit = this.handleSubmit.bind(this);
         this.handleChange = this.handleChange.bind(this);
+        this.checkIfLoggedIn = this.checkIfLoggedIn.bind(this);
 	}
 
-	componentWillMount(){
-		this.getUserRequests();
+	componentWillMount() {
+		this.checkIfLoggedIn();
 	}
 
+	componentDidMount() {
+    	if(this.state.isLoggedIn){
+			this.getUserRequests();
+		}
+    }
+
+	checkIfLoggedIn() {
+		fetch('/login', {
+			credentials: 'include'
+		})
+		.then((res) => {
+			if(res.status !== 200) {
+				this.setState({
+					isLoggedIn: false,
+				}, 
+				this.findRoutes);
+			} else {
+				console.log("logged in!!!!!");
+				this.setState({
+					isLoggedIn: true,
+				},
+				this.findRoutes);
+			}
+		});
+	}
 	getUserRequests() {
 		fetch('/dashboard', {
   			credentials: 'include'
@@ -72,25 +98,6 @@ class Dashboard extends Component {
 			// console.log(this.state.requests);
 	}
 
-	logout() {
-		fetch('/logout', {
-		        method: 'POST',
-	        	headers: {
-	          		"Content-type": "application/json",
-	        	},
-	          	"credentials": 'include',
-    	}).then((res) => {
-		        if(res.state !== 200) {
-		          console.log("Could not log out");
-		        } else {
-		        	this.setState({
-		        		isLoggedOut: true,
-		        	})
-		          console.log("Log out successful!");
-		        }
-    	});
-	}
-
 	handleChange(event) {
 	    const fieldName = event.target.name;
 	    this.setState({[fieldName]: event.target.value});
@@ -101,6 +108,7 @@ class Dashboard extends Component {
 		        method: 'POST',
 		        body: JSON.stringify({
 		          matched_user_id: this.state.matched_user_id,
+		          request_date: this.state.request_date,
 		          transaction_amt: this.state.transaction_amt,
 		          status: this.state.status,
 		          from_country: this.state.from_country,
@@ -131,19 +139,25 @@ class Dashboard extends Component {
 		if(this.state.isLoggedOut){
 			return <Redirect to="/" />
 		}
+		if(!this.state.isLoggedIn) {
+			return <Redirect to="/login" />
+		}
 
 		return(
 			<div>
 				{/*  Navigation  */}
 				<PageNavigation />
 				<DashboardNavigation />
-				<button onClick={this.logout}>Logout</button>
 
 				{/*  Dashboard  */}
 				<div className="wrapper">
 					<div id="dashboard-content">
+
+						{/* Create new request button */}
 						<div>
-						<button id="request_button" data-toggle="collapse" data-target="#request_form_wrapper">Create new request </button>
+						<button id="request_button" data-toggle="collapse" data-target="#request_form_wrapper">
+							<span> Create new request </span>
+							<img src={require('./assets/create_request_btn.png')} className="icon_size"/> </button>
 						</div>
 
 
@@ -152,29 +166,37 @@ class Dashboard extends Component {
 
 							<div id="request_form">
 						        <form onSubmit={this.handleSubmit}>
-
-						            <label for="from_country"> From Country: </label>
+						        {/*  From country: Country sending money from */}
+						            <label for="from_country" className="tool_tip"> From Country: 
+						            	<span className="tool_tip_text">This is the country that you're sending money from.</span>
+						            </label>
 						            <input list="countries" id="from_country" name="from_country" value={this.state.from_country} onChange={this.handleChange} required />
 						            <datalist id="countries">
-						              <option value="France" />
-						              <option value="England" />
-						              <option value="Poland" />
-						              <option value="South America" />
-						              <option value="India" />
+							              <option value="France" />
+							              <option value="England" />
+							              <option value="Poland" />
+							              <option value="South America" />
+							              <option value="India" />
 						            </datalist>
 
-						          <label for="to_country"> To Country: </label>
+						        {/*  To Country: Country sending money to  */}
+						          <label for="to_country" className="tool_tip"> To Country: 
+						          		<span className="tool_tip_text">This is the country that you want to send money to.</span>
+						          </label>
 						            <input list="countries" id="to_country" name="to_country" value={this.state.to_country} onChange={this.handleChange} required/>
 						            <datalist id="countries">
-						              <option value="United States" />
-						              <option value="France" />
-						              <option value="England" />
-						              <option value="Poland" />
-						              <option value="South America" />
-						              <option value="India" />
+							              <option value="United States" />
+							              <option value="France" />
+							              <option value="England" />
+							              <option value="Poland" />
+							              <option value="South America" />
+							              <option value="India" />
 						            </datalist>
 
-						          <label for="transaction_amt">Transaction Amount: {this.state.currency} </label>
+						        {/* Transaction Amount: Amount you want to send to the 'to country' */ }
+						          <label for="transaction_amt" className="tool_tip">Transaction Amount: {this.state.currency} 
+						          		<span className="tool_tip_text">This is the amount of money you want to send.</span>
+						          </label>
 						          <input type="number" id="transaction_amt" name="transaction_amt" placeholder="Enter Amount" min="0" step="0.01" value={this.state.transaction_amt} onChange={this.handleChange} />
 
 
@@ -196,8 +218,10 @@ class Dashboard extends Component {
 				</div>
 
 				{/*  Dashboard side images  */}
-				<img src={require('./assets/left.png')} id="left_image" className="tree_img"/>
-				<img src={require('./assets/right.png')} id="right_image" className="tree_img"/>
+				<div className="d-none d-lg-block">
+					<img src={require('./assets/left.png')} id="left_image" className="tree_img"/>
+					<img src={require('./assets/right.png')} id="right_image" className="tree_img"/>
+				</div>
 				{/*  End Dashboard side images  */}
 
 			</div>
