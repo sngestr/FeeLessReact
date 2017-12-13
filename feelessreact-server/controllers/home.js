@@ -2,6 +2,7 @@ const express = require('express');
 const models = require('../models');
 
 const HomeController = {
+  
   registerRouter() {
     const router = express.Router();
 
