@@ -1,91 +1,82 @@
-/*Setting the background image*/
-img.bg.center {
+/*
+/* Created by Filipe Pina
+ * Specific styles of signin, register, component
+ */
+/*
+ * General styles
+ */
 
-  /* Set rules to fill background */
-  min-height: 100%;
-  min-width: 100%;
-  /*min-width: 1024px;*/
-
-  /* Set up proportionate scaling */
-  width: auto;
+body{
   height: 100%;
-
-  /*Set up positioning */
-  position: fixed;
-  /*top: 0;
-  left: 0;
-  z-index: -1;
-  background: linear-gradient(#b7e1cf, #fdffd8);*/
+  background-repeat: no-repeat;
+  background-color: #a8f0e9;
+  font-family: 'Oxygen', sans-serif;
 }
 
-h2{
-  font-family: 'Nunito', sans-serif;
-  font-weight: bold;
-  font-size: 2rem;
-  color: #9dbeb0;
+/*.main{
+  margin-top: 70px;
+}*/
+
+h1.title { 
+  font-size: 50px;
+  font-family: 'Passion One', cursive; 
+  font-weight: 400;
+  color: #1c605a; 
+  margin-top: 70px;
+}
+
+hr{
+  width: 10%;
+  color: #fff;
+}
+
+.form-group{
+  margin-bottom: 15px;
+}
+
+label{
+  margin-bottom: 15px;
+}
+
+input, input::-webkit-input-placeholder {
+    font-size: 11px;
+}
+
+.main-login{
+  
+  background-color: #fff;
+  /* shadows and rounded borders */
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+  border-radius: 2px;
+  -moz-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+}
+
+.main-center{
+  margin-top: 30px;
+  margin: 0 auto;
+  max-width: 330px;
+  padding: 40px 40px;
+ margin-top: 70px;
+}
+
+.login-button{
+  margin-top: 5px;
+  color:black;
+  background-color: #a8f0e9;
+}
+
+.login-register{
+  font-size: 11px;
   text-align: center;
 }
-
-#table{
-
-    width:400px;
-    height:110px;
-    position:fixed;
-    margin-left:-0px; /* half of width */
-    margin-top:-100px;  /* half of height */
-    top:48%;
-    left:60%;
+#create-account{
+  font-size: 20px;
 }
-
-#email_input, #password_input{
-
-  width: 310px;
-  height:30px;
-  right: 21%;
-  background: transparent;
-  border: none;
-  position:fixed;
+#side-text{
+ font-size: 20px;
+font-weight:bold;
+color:#1c605a; 
 }
-
-#submit_request{
-  
-  width:400px;
-  height:49px;
-  position:fixed;
-  margin-left:-0px; /* half of width */
-  margin-top:-100px;  /* half of height */
-  top:71%;
-  left:50.5%;
-
-  background: transparent;
-  border: none;
-}
-
-#signup_link{
-  
-    position: relative;
-    left: 955px;
-    top: 295px;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

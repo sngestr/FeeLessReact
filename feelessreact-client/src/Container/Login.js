@@ -52,42 +52,58 @@ class Login extends Component {
 	}
 
 	render() {
+
 		if(this.state.isLoggedIn) {
 			return <Redirect to="/dashboard" />;
 		}
 
 		return (
-			<div>
-				
-				{/*The background image for the login page:*/}
-				<img src={require('./assets/feelessLogin.png')} className="bg" />
-				{/*<Navigation />*/}
-				
-				{/*<PageNavigation />  Do we need that here?*/}
+			
+			<div class="container">
+			<div class="row main">
+				<div class="panel-heading">
+	               <div class="panel-title text-center">
+	               		<h1 class="title">FeeLess</h1>
+	               		<div id="side-text">
+		               		<p>The first social network to exchange money simply and free!</p>
+		               		<p>Enjoy your visit!</p>
+	               		</div>
+	               		<hr />
+	               	</div>
+	            </div> 
+				<div class="main-login main-center">
+					<form class="form-horizontal" method="post" action="#">
+						<div class="form-group">
+							<label for="username" class="cols-sm-2 control-label">Username</label>
+							<div class="cols-sm-10">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
+									<input type="email" class="form-control" id="email_input" name="email" id="username"  placeholder="Enter your Username" value={this.state.email} onChange={this.handleChange}/>
+								
+								</div>
+							</div>
+						</div>
 
-				<h2> 🐶 Login Page 🐶 </h2>
+						<div class="form-group">
+							<label for="password" class="cols-sm-2 control-label">Password</label>
+							<div class="cols-sm-10">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
+									<input type="password" class="form-control" id="password_input" name="password" value={this.state.password} onChange={this.handleChange}  placeholder="Enter your Password"/>
+								</div>
+							</div>
+						</div>
 
-				<form onSubmit={this.handleSubmit}>
-
-					<table id="table"> 
-						<tr>
-							{/*<td> <label for="email_input">Email</label> </td>*/}
-							<td> <input type="email" id="email_input" name="email" value={this.state.email} onChange={this.handleChange}/> </td>
-						</tr>
-
-						<tr>
-							{/*<td> <label for="password_input">Password</label> </td>*/}
-							<td> <input type="password" id="password_input" name="password" value={this.state.password} onChange={this.handleChange} /> </td>
-						</tr>
-					</table>
-
-					<input type="submit" id="submit_request"/>
-
-					{/*The signup link has to be at the buttom*/}
-					<Link to="/signup" id="signup_link"> _______ </Link>
-
-				</form>
+						<div class="form-group ">
+							<button type="button" class="btn btn-primary btn-lg btn-block login-button" onSubmit={this.handleSubmit}>Sign in</button>
+						</div>
+						<div class="login-register">
+				            <a href="/signup" to="/signup" id="create-account">Create account</a>
+				         </div>
+					</form>
+				</div>
 			</div>
+		</div>
 		);
 	}
 }
