@@ -59,6 +59,8 @@ class SignUp extends Component {
 
 		return (
 			<div>
+				{/* background color */}
+				<div class="color_bg"></div>
 				<PageNavigation />
 
 				{/* Sign up form */}

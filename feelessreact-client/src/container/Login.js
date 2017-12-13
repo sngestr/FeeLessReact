@@ -53,7 +53,11 @@ class Login extends Component {
 
 		return (
 			<div>
+				{/* background color */}
+				<div class="color_bg"></div>
 				<PageNavigation />
+
+				{/* Login form */}
 				<div class="col-xs-10 col-lg-6 offset-lg-3 form_container">
 					<div class="form text-center">
 						<form onSubmit={this.handleSubmit}>

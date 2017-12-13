@@ -5,3 +5,23 @@
   width: 80px;
   height: auto;
 }
+.inline {
+	display: inline-block;
+}
+.top_right_side {
+	float: right;
+	display: inline-block;
+}
+.logout_btn {
+	font-size: 0.8rem;
+	text-transform: uppercase;
+	color: black;
+	border: none;
+}
+.logout_btn:hover {
+	cursor: pointer;
+	color: gray;
+}
+.logout_btn:focus {
+	outline: none;
+}
