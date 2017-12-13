@@ -7,9 +7,9 @@ class Login extends Component {
 	constructor() {
 		super();
 		this.state = {
-			email: '',
-			password: '',
-			isLoggedIn: false,
+				email: '',
+				password: '',
+				isLoggedIn: false,
 		};
 
 		this.handleSubmit = this.handleSubmit.bind(this);
@@ -23,24 +23,24 @@ class Login extends Component {
 
 	handleSubmit(event) {
 		fetch('/login', {
-			method: 'POST',
-			body: JSON.stringify({
-				email: this.state.email,
-				password: this.state.password,
-			}),
-			headers: {
-    		"Content-Type": "application/json",
-  		},
-  			"credentials": 'include',
+				method: 'POST',
+				body: JSON.stringify({
+					email: this.state.email,
+					password: this.state.password,
+				}),
+				headers: {
+	    		"Content-Type": "application/json",
+	  			},
+	  			"credentials": 'include',
 		}).then((res) => {
-			if(res.status != 200) {
-				// login failed, show message, and stay at login form
-				console.log('ERROR logging in!')
-			} else {
-				this.setState({isLoggedIn: true});
-			}
+				if(res.status != 200) {
+					// login failed, show message, and stay at login form
+					console.log('ERROR logging in!')
+				} else {
+					this.setState({isLoggedIn: true});
+				}
 		}).then((body) => {
-			console.log(body);
+				console.log(body);
 		})
 
 		event.preventDefault();
@@ -54,7 +54,6 @@ class Login extends Component {
 		return (
 			<div>
 				<PageNavigation />
-				<Link to="/signup"> Sign up </Link>
 
 				<br /> <h2> 🐶 login page 🐶 </h2>
 
@@ -73,6 +72,7 @@ class Login extends Component {
 
 					<input type="submit" />
 				</form>
+				<Link to="/signup"> Don't have an account? Sign up </Link>
 			</div>
 
 		);

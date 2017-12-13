@@ -1,15 +1,38 @@
 module.exports =  (sequelize, DataTypes) => {
 	const Requests = sequelize.define('Requests', {
-		matched_user_id: DataTypes.INTEGER,
-		request_date: DataTypes.DATE,
-		matched_date: DataTypes.DATE,
-		transaction_amt: DataTypes.DOUBLE,
-		status: DataTypes.BOOLEAN,
-		from_country: DataTypes.STRING,
-		to_country: DataTypes.STRING,
-		split_money: DataTypes.BOOLEAN,
-		minimum_amount: DataTypes.DOUBLE,
-		exchange_in_person: DataTypes.BOOLEAN
+		matched_user_id: {
+			type: DataTypes.INTEGER,
+		},
+		request_date: {
+			type: DataTypes.DATE,
+		},
+		matched_date: {
+			type: DataTypes.DATE,
+		},
+		transaction_amt: {
+			allowNull: false,
+			type: DataTypes.DOUBLE,
+		},
+		status: {
+			type: DataTypes.BOOLEAN,
+		},
+		from_country: {
+			allowNull: false,
+			type: DataTypes.STRING,
+		},
+		to_country: {
+			allowNull: false,
+			type: DataTypes.STRING,
+		},
+		split_money: {
+			type: DataTypes.BOOLEAN,
+		},
+		minimum_amount: {
+			type: DataTypes.DOUBLE,
+		},
+		exchange_in_person: {
+			type: DataTypes.BOOLEAN,
+		},
 	});
 	Requests.associate = (models) => {
 		models.Requests.belongsTo(models.Users);

@@ -15,27 +15,26 @@ const LogoutController = {
     return router;
   },
   index(req, res) {
-    res.json({
-      msg: "Successful GET to '/logout' route"
-    });
+        res.json({
+          msg: "Successful GET to '/logout' route"
+        });
   },
   create(req, res) {
-  	req.logout();
-    res.status(200).json({
-      msg: "Logged out!",
-    });
+      	req.logout();
+        console.log("yay logout!");
+        res.sendStatus(200);
   },
   update(req, res) {
-    res.json({
-      msg: "Successful PUT to '/logout' route",
-      id: req.params.id
-    });
+        res.json({
+          msg: "Successful PUT to '/logout' route",
+          id: req.params.id
+        });
   },
   delete(req, res) {
-    res.json({
-      msg: "Successful DELETE to '/logout' route",
-      id: req.params.id
-    });
+        res.json({
+          msg: "Successful DELETE to '/logout' route",
+          id: req.params.id
+        });
   },
 };
 
