@@ -127,3 +127,26 @@
     border-color: black transparent transparent transparent;
 }
 /* ===== End Dashboard Tooltip ===== */
+
+
+/* ======== Status of request ======= */
+.pending {
+  background-color: #fff9ce;
+  height: 30px;
+}
+
+.pending h6 {
+   vertical-align: center;
+   line-height: 30px;
+}
+
+.matched {
+  background-color: #d8ece4;
+  height: 30px;
+}
+
+.matched h6 {
+   vertical-align: center;
+   line-height: 30px;
+}
+/* ======== End Status of request ======= */

@@ -28,8 +28,8 @@ function Request(props) {
 						{props.data.to_country}<br />
 					</div>
 					<div classname='col-md-3'>
-						{status ? (<div><h6> Matched </h6></div>) : 
-							(<div><h6> Pending </h6></div>)}
+						{status ? (<div className="matched"><h6> Matched </h6></div>) : 
+							(<div className="pending"><h6> Pending </h6></div>)}
 						<b>Transaction Amount: </b>
 						{props.data.transaction_amt}
 					</div>
@@ -225,7 +225,7 @@ class Dashboard extends Component {
 						          <input type="number" id="transaction_amt" name="transaction_amt" placeholder="Enter Amount" min="0" step="0.01" value={this.state.transaction_amt} onChange={this.handleChange} />
 
 						        {/* Current Exchange Rate */}
-						        <h5>Current Exchange Rate:</h5>
+						        {/*<h5>Current Exchange Rate:</h5>*/}
 						     	
 
 
