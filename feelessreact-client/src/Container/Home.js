@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
-import ReactDOM from "react-dom"; // Rendering engine 
-
+import ReactDOM 			from "react-dom"; // Rendering engine 
+import {Link} 				from 'react-router-dom';
+import Navigation 			from '../Navigation';
 import './stylesheets/Home.css'; // CSS file for the the style
-import {Link} from 'react-router-dom';
-import Navigation from '../Navigation';
 
 //class Home extends Component {
 class Home extends React.Component { // Everything in react is a component. 
@@ -19,7 +18,7 @@ class Home extends React.Component { // Everything in react is a component.
 			<div id="home_component">
 
 				<img src={require('./assets/homebg.png')} className="bg" />
-				<Navigation />
+				<Navigation />{/* The navigation bar on top of the page*/}
 
 				<div id="homepage-header-content">
 					<h1> Avoid the fees </h1>

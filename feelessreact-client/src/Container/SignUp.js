@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
-import { Link, Redirect } from 'react-router-dom';
-import PageNavigation from './PageNavigation';
+import { Link, Redirect } 	from 'react-router-dom';
+import PageNavigation 		from './PageNavigation';
 
-import Navigation from '../Navigation';
 import './stylesheets/SignUp.css';
 
 class SignUp extends Component {
@@ -65,7 +64,7 @@ class SignUp extends Component {
 
 				{/*The background image for the signup page:*/}
 				<img src={require('./assets/feelessSignup.png')} className="bg" />
-				<Navigation />	
+				{/*<Navigation />*/}	
 				
 				{/*Dashboard and login links:*/}
 				<Link to="/dashboard" id = "dashboard_id">________________________</Link>

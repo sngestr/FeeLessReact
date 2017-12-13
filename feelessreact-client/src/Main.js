@@ -1,9 +1,9 @@
-import React from 'react';
-import {Switch, Route} from 'react-router-dom';
-import Home from './Container/Home';
-import Login from './Container/Login';
-import Dashboard from './Container/Dashboard';
-import SignUp from './Container/SignUp';
+import React 		    from 'react';
+import {Switch, Route}  from 'react-router-dom';
+import Home 		    from './Container/Home';
+import Login 		    from './Container/Login';
+import Dashboard 	    from './Container/Dashboard';
+import SignUp 			from './Container/SignUp';
 import './Container/stylesheets/Main.css';
 
 

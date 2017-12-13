@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import {Link, Redirect, Route} from 'react-router-dom';
 import PageNavigation from './PageNavigation';
-import './stylesheets/Login.css';
-import Navigation from '../Navigation';
+
+
 import './stylesheets/Login.css'; // CSS file for the the style
 
 class Login extends Component {
@@ -61,7 +61,7 @@ class Login extends Component {
 				
 				{/*The background image for the login page:*/}
 				<img src={require('./assets/feelessLogin.png')} className="bg" />
-				<Navigation />
+				{/*<Navigation />*/}
 				
 				{/*<PageNavigation />  Do we need that here?*/}
 

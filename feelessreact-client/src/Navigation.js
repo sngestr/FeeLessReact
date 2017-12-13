@@ -6,14 +6,20 @@ import './Container/stylesheets/Navigation.css';
 
 const Navigation = () => {
 	return (
-		<div className="nav">
-			<Link to='/'>
-		        <img src={require('./Container/assets/logo-white.png')} id="logo"/>
-		    </Link>
+		
+		<div className="nav">	
+			
+			<div className="move-left">
+				<Link to='/'>
+			        <img src={require('./Container/assets/logo-white.png')} id="logo"/>
+			    </Link>	
+			</div>
+			
+		    
 		    <div className="move-right">
 				<Link to="/login" className="homepage-link"> Login </Link>
-				<Link to="/" className="homepage-link"> About </Link>
-				<Link to="/" className="homepage-link"> Help </Link>
+				<Link to="/about" className="homepage-link"> About </Link>
+				<Link to="/help"  className="homepage-link"> Help </Link>
 			</div>
 		</div>
 	);
