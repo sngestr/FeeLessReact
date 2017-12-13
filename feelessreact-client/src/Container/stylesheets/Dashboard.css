@@ -18,6 +18,9 @@
 }
 /* ==== End dashboard navigation ===== */
 
+#request_form_wrapper {
+  margin-bottom: 30px;
+}
 
 /* ===== Content (User Requests Information) ====== */
 #dashboard-content {
@@ -55,12 +58,15 @@
   height: auto;
 }
 /* ===== End Create new request button ===== */
-
+.img_icon {
+  width: 60px;
+  height: auto;
+}
 
 /* ===== Dashboard tree images ===== */
 .tree_img {
   width: 200px;
-  position: absolute;
+  position: fixed;
   bottom: 0;
 }
 #left_image {

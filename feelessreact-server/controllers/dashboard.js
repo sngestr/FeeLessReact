@@ -23,6 +23,7 @@ const DashboardController = {
         }).then((allRequests) => {
             res.json({
               requests: allRequests,
+              user: req.user
             });
         });
   },

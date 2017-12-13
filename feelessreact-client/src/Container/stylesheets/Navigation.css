@@ -24,6 +24,7 @@
 /* Navigation bar's logout option */
 .nav_logout_btn {
 	border: none;
+	padding: 0;
 	background-color: transparent;
 }
 .nav_logout_btn:hover {

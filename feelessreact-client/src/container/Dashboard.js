@@ -6,16 +6,35 @@ import './stylesheets/RequestForm.css';
 import './stylesheets/Dashboard.css';
 
 function Request(props) {
+	const status = props.data.status;
+
 	return (
 		<div>
-			<b>Id:</b>
-			{props.data.id}<br />
-			<b>From Country:</b>
-			{props.data.from_country}<br />
-			<b>To Country:</b>
-			{props.data.to_country}<br />
-			<b>Transaction Amount:</b>
-			{props.data.transaction_amt}
+			<div className="container text-center">
+				<div className="row">
+					<div className='col-md-1'>
+						<img src={require('./assets/avatar.png')} className="img_icon"/>
+					</div>
+					<div className='col-md-2'>
+						<b>Id: </b>
+						{props.data.id}<br />
+					</div>
+					<div className='col-md-3'>
+						<b>From Country: </b>
+						{props.data.from_country}<br />
+					</div>
+					<div className='col-md-3'>
+						<b>To Country: </b>
+						{props.data.to_country}<br />
+					</div>
+					<div classname='col-md-3'>
+						{status ? (<div><h6> Matched </h6></div>) : 
+							(<div><h6> Pending </h6></div>)}
+						<b>Transaction Amount: </b>
+						{props.data.transaction_amt}
+					</div>
+				</div>
+			</div>
 			<hr />
 		</div>
 	);
