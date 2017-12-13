@@ -16,7 +16,10 @@ const DashboardController = {
         models.Requests.findAll({
             where: {
               UserId: req.user.id,
-            }
+            },
+            order: [
+              ['createdAt', 'DESC']
+            ],
         }).then((allRequests) => {
             res.json({
               requests: allRequests,

@@ -36,8 +36,7 @@ class Dashboard extends Component {
 		        split_money: false,
 		        minimum_amount: null,
 		        exchange_in_person: false,
-		        currency: '$',
-		        countries: ['United States', 'France', 'England', 'Canada'],
+		        countries: [{name: 'United States', currency: 'USD', currency_symbol: '$'},],
 		};
 
 		this.getUserRequests = this.getUserRequests.bind(this);
@@ -55,7 +54,6 @@ class Dashboard extends Component {
 			this.getUserRequests();
 		}
     }
-
 	checkIfLoggedIn() {
 		fetch('/login', {
 			credentials: 'include'
@@ -128,7 +126,15 @@ class Dashboard extends Component {
 		          console.log("request form submitted");
 		        }
 	    }).then((body) => {
+	    		//Update the user requests
 		    	this.getUserRequests();
+
+		    	//Clear the rewuest form
+		    	this.setState({
+    				from_country: '',
+    				to_country: '',
+    				transaction_amt: 0.00,
+    			});
 		        console.log(body);
 	    });
 
@@ -175,7 +181,7 @@ class Dashboard extends Component {
 							              <option value="France" />
 							              <option value="England" />
 							              <option value="Poland" />
-							              <option value="South America" />
+							              <option value="South Africa" />
 							              <option value="India" />
 						            </datalist>
 
@@ -189,7 +195,7 @@ class Dashboard extends Component {
 							              <option value="France" />
 							              <option value="England" />
 							              <option value="Poland" />
-							              <option value="South America" />
+							              <option value="South Africa" />
 							              <option value="India" />
 						            </datalist>
 
@@ -199,8 +205,12 @@ class Dashboard extends Component {
 						          </label>
 						          <input type="number" id="transaction_amt" name="transaction_amt" placeholder="Enter Amount" min="0" step="0.01" value={this.state.transaction_amt} onChange={this.handleChange} />
 
+						        {/* Current Exchange Rate */}
+						        <h5>Current Exchange Rate:</h5>
+						     	
 
-						          <input type="submit" />
+
+						          <input type="submit" data-toggle="collapse" data-target="#request_form_wrapper"/>
 						        </form>
 					      	</div>
 
