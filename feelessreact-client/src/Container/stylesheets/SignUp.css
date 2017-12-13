@@ -1,0 +1,74 @@
+/* 
+ *	Container that holds the Signup/Login Form 
+ */
+.form_container {
+	position: relative;
+	background-color: #fff;
+	border-radius: 10px;
+	box-shadow: 0px 0px 40px lightgray;
+	padding: 30px;
+}
+/*
+ *	The login/signup form 
+ */
+.form {
+	margin: 0 auto;
+	width: 60%;
+}
+/* Input information */
+.form input {
+	width: 80%;
+	padding: 10px;
+	outline: none;
+	border: 1px solid #c2c0b3;
+	border-radius: 10px;
+	margin: 5px 0px;
+	background-color: #f6f6f6;
+	transition: 0.3s;
+	color: gray;
+}
+.form input:focus {
+	border-color: #b9d197;
+}
+/* Change placeholder style when input is focused */
+.form input:focus::placeholder{
+	color: gray;
+}
+
+.form input::placeholder {
+	text-align: center;
+	color: #c2c0b3;
+}
+
+.form input[type="submit"] {
+	width: 50%;
+	cursor: pointer;
+	color: #fff;
+	text-transform: uppercase;
+	padding: 12px 7px;
+	border: none;
+	border-radius: 0;
+	margin-top: 15px;
+	box-shadow: 0px 10px 20px #d6e4de;
+	background-color: #acd9c6;
+}
+
+.form .link {
+	font-size: 0.8rem;
+	color: #95c5b1;
+}
+
+@media only screen and (max-width: 700px) {
+	.form {
+		width: 70%;
+	}
+	.form_container {
+		padding: 50px 0;
+	}
+	.form input {
+		width: 100%;
+	}
+	.form input[type="submit"] {
+		width: 100%;
+	}
+}

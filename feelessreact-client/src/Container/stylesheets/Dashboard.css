@@ -60,7 +60,7 @@
 /* ===== Dashboard tree images ===== */
 .tree_img {
   width: 200px;
-  position: fixed;
+  position: absolute;
   bottom: 0;
 }
 #left_image {
