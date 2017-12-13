@@ -1,0 +1,91 @@
+/*Setting the background image*/
+img.bg.center {
+
+  /* Set rules to fill background */
+  min-height: 100%;
+  min-width: 100%;
+  /*min-width: 1024px;*/
+
+  /* Set up proportionate scaling */
+  width: auto;
+  height: 100%;
+
+  /*Set up positioning */
+  position: fixed;
+  /*top: 0;
+  left: 0;
+  z-index: -1;
+  background: linear-gradient(#b7e1cf, #fdffd8);*/
+}
+
+h2{
+  font-family: 'Nunito', sans-serif;
+  font-weight: bold;
+  font-size: 2rem;
+  color: #9dbeb0;
+  text-align: center;
+}
+
+#table{
+
+    width:400px;
+    height:110px;
+    position:fixed;
+    margin-left:-0px; /* half of width */
+    margin-top:-100px;  /* half of height */
+    top:48%;
+    left:60%;
+}
+
+#email_input, #password_input{
+
+  width: 310px;
+  height:30px;
+  right: 21%;
+  background: transparent;
+  border: none;
+  position:fixed;
+}
+
+#submit_request{
+  
+  width:400px;
+  height:49px;
+  position:fixed;
+  margin-left:-0px; /* half of width */
+  margin-top:-100px;  /* half of height */
+  top:71%;
+  left:50.5%;
+
+  background: transparent;
+  border: none;
+}
+
+#signup_link{
+  
+    position: relative;
+    left: 955px;
+    top: 295px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

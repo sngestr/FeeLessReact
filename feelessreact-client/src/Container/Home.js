@@ -1,9 +1,12 @@
 import React, { Component } from 'react';
 import './stylesheets/Home.css';
 import { Link, Redirect } from 'react-router-dom';
+import ReactDOM from "react-dom"; // Rendering engine 
 import Navigation from '../Navigation';
 
-class Home extends Component {
+//class Home extends Component {
+class Home extends React.Component { // Everything in react is a component. 
+
 	constructor() {
 		super();
 		this.state = {
@@ -37,9 +40,10 @@ class Home extends Component {
 
 	render() {
 		const isLoggedIn = this.state.isLoggedIn;
-
 		return (
+
 			<div id="home_component">
+
 				<img src={require('./assets/homebg.png')} className="bg" />
 				<Navigation />
 
@@ -51,6 +55,7 @@ class Home extends Component {
 						<Link to="/dashboard" className="button"> Dashboard </Link> ) : (
 						<Link to="/signup" className="button"> Sign up</Link> )}
 				</div>
+
 			</div>
 		);
 	}
