@@ -6,6 +6,11 @@ const PORT = process.env.PORT || 8000;
 
 const app = express();
 
+// Express only serves static assets in production
+if (process.env.NODE_ENV === 'production') {
+  app.use(express.static('feelessreact-client/build'));
+}
+
 // Access Body Data
 const bodyParser = require('body-parser');
 app.use(bodyParser.json());
