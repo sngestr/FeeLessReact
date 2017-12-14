@@ -13,6 +13,7 @@
 	color: #fff;
 	transition: .2s;
 	margin-right: 100px;
+	text-decoration: none;
 }
 
 .homepage-link:hover {
@@ -26,6 +27,7 @@
 	border: none;
 	padding: 0;
 	background-color: transparent;
+	text-decoration: none;
 }
 .nav_logout_btn:hover {
 	cursor: pointer;

@@ -52,6 +52,7 @@ img.bg {
     letter-spacing: 1px;
     box-shadow: 0px 10px #c1d897;
     transition: .2s;
+    text-decoration: none;
 }
 
 .button:hover {

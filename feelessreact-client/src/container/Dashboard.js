@@ -55,7 +55,7 @@ class Dashboard extends Component {
 		        split_money: false,
 		        minimum_amount: null,
 		        exchange_in_person: false,
-		        countries: [{name: 'United States', currency: 'USD', currency_symbol: '$'},],
+		        countries: ["United States"],
 		};
 
 		this.getUserRequests = this.getUserRequests.bind(this);
@@ -159,6 +159,7 @@ class Dashboard extends Component {
 
 	    event.preventDefault();
     }
+
 	render() {
 		/*Redirect when user is not logged in*/
 		if(this.state.isLoggedOut){
@@ -197,6 +198,7 @@ class Dashboard extends Component {
 						            </label>
 						            <input list="countries" id="from_country" name="from_country" value={this.state.from_country} onChange={this.handleChange} required />
 						            <datalist id="countries">
+						            	  <option value="United States" />
 							              <option value="France" />
 							              <option value="England" />
 							              <option value="Poland" />
