@@ -53,26 +53,28 @@ class Login extends Component {
 
 		return (
 			<div>
+				{/* background color */}
+				<div class="color_bg"></div>
 				<PageNavigation />
 
-				<br /> <h2> 🐶 login page 🐶 </h2>
+				{/* Login form */}
+				<div class="col-xs-10 col-lg-6 offset-lg-3 form_container">
+					<div class="form text-center">
+						<form onSubmit={this.handleSubmit}>
+							<input type="email" id="email_input" placeholder="email address" name="email" value={this.state.email} onChange={this.handleChange} required="true"/>
+							<input type="password" id="password_input" placeholder="password" name="password" value={this.state.password} onChange={this.handleChange} required="true"/>
+							<input type="submit" value="Login"/>
+						</form>
+						<Link to="/signup" class="link"> Don't have an account? Sign up </Link>
+					</div>
+				</div>
 
-				<form onSubmit={this.handleSubmit}>
-					<table>
-						<tr>
-							<td> <label for="email_input">Email</label> </td>
-							<td> <input type="email" id="email_input" name="email" value={this.state.email} onChange={this.handleChange}/> </td>
-						</tr>
-
-						<tr>
-							<td> <label for="password_input">Password</label> </td>
-							<td> <input type="password" id="password_input" name="password" value={this.state.password} onChange={this.handleChange} /> </td>
-						</tr>
-					</table>
-
-					<input type="submit" />
-				</form>
-				<Link to="/signup"> Don't have an account? Sign up </Link>
+				{/*  side images  */}
+				<div className="d-none d-lg-block">
+					<img src={require('./assets/left.png')} id="left_image" className="tree_img"/>
+					<img src={require('./assets/right.png')} id="right_image" className="tree_img"/>
+				</div>
+				{/*  End side images  */}
 			</div>
 
 		);

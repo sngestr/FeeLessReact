@@ -59,41 +59,31 @@ class SignUp extends Component {
 
 		return (
 			<div>
+				{/* background color */}
+				<div class="color_bg"></div>
 				<PageNavigation />
 
-				<br /> <h2> 🐶 sign up page 🐶 </h2>
+				{/* Sign up form */}
+				<div class="col-xs-10 col-lg-6 offset-lg-3 form_container">
+					<div class="form text-center">
+						<form onSubmit={this.handleSubmit}>
+							<input type="text" id="fname_input" value={this.state.firstName} placeholder="first name" name="first_name" onChange={this.handleChange} required="true"/><br />
+							<input type="text" id="lname_input" value={this.state.lastName} placeholder="last name" name="last_name" onChange={this.handleChange} required="true"/><br />
+							<input type="email" id="email_input" value={this.state.email} placeholder="email address" name="email" onChange={this.handleChange} required="true"/><br />
+							<input type="password" id="password_input" value={this.state.password_hash} placeholder="password" name="password_hash" onChange={this.handleChange} required="true"/><br />
+						   	<input type="password" id="confirm_password_input" value={this.state.confirm_password_hash} placeholder="confirm password" name="confirm_password_hash" onChange={this.handleChange} required="true"/><br/>
+							<input type="submit" value="sign up"/>
+						</form>
+						<Link to="/login" class="link">Already have an account? Login</Link>
+					</div>
+				</div>
 
-				<form onSubmit={this.handleSubmit}>
-					<table>
-						<tr>
-							<td> <label for="fname_input">First Name</label> </td>
-							<td> <input type="text" id="fname_input" value={this.state.firstName} name="first_name" onChange={this.handleChange} /> </td>
-						</tr>
-
-						<tr>
-							<td> <label for="lname_input">Last Name</label> </td>
-							<td> <input type="text" id="lname_input" value={this.state.lastName} name="last_name" onChange={this.handleChange} /> </td>
-						</tr>
-
-						<tr>
-							<td> <label for="email_input">Email</label> </td>
-							<td> <input type="email" id="email_input" value={this.state.email} name="email" onChange={this.handleChange} /> </td>
-						</tr>
-
-						<tr>
-							<td> <label for="password_input">Password</label> </td>
-							<td> <input type="password" id="password_input" value={this.state.password_hash} name="password_hash" onChange={this.handleChange} /> </td>
-						</tr>
-
-						<tr>
-							<td> <label for="confirm_password_input">Confirm Password</label> </td>
-							<td> <input type="password" id="confirm_password_input" value={this.state.confirm_password_hash} name="confirm_password_hash" onChange={this.handleChange}/> </td>
-						</tr>
-					</table>
-
-					<input type="submit" />
-				</form>
-				<Link to="/login">Already have an account? Login</Link>
+				{/*  side images  */}
+				<div className="d-none d-lg-block">
+					<img src={require('./assets/left.png')} id="left_image" className="tree_img"/>
+					<img src={require('./assets/right.png')} id="right_image" className="tree_img"/>
+				</div>
+				{/*  End side images  */}
 			</div>
 		);
 	}

@@ -72,7 +72,7 @@ class Navigation extends Component {
 		    	<div className="move-right">
 		    		<Link to="/" className="homepage-link"> About </Link>
 					<Link to="/" className="homepage-link"> Help </Link>
-					<button onClick={this.logout}>Logout</button>
+					<button onClick={this.logout} class="homepage-link nav_logout_btn">Logout</button>
 				</div>
 		    	) : (
 		    	<div className="move-right">

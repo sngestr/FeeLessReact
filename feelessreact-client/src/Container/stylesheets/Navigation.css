@@ -5,6 +5,7 @@
 	position: absolute;
 	right: 0;
 }
+/* Navigation links */
 .homepage-link {
 	font-family: 'Economica', sans-serif;
 	font-size: 1.7rem;
@@ -18,4 +19,17 @@
 	text-decoration: none;
 	color: #fff;
 	box-shadow: 0px 5px #87b9a4;
+}
+
+/* Navigation bar's logout option */
+.nav_logout_btn {
+	border: none;
+	padding: 0;
+	background-color: transparent;
+}
+.nav_logout_btn:hover {
+	cursor: pointer;
+}
+.nav_logout_btn:focus {
+	outline: none;
 }

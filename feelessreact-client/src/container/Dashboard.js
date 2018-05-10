@@ -6,16 +6,35 @@ import './stylesheets/RequestForm.css';
 import './stylesheets/Dashboard.css';
 
 function Request(props) {
+	const status = props.data.status;
+
 	return (
 		<div>
-			<b>Id:</b>
-			{props.data.id}<br />
-			<b>From Country:</b>
-			{props.data.from_country}<br />
-			<b>To Country:</b>
-			{props.data.to_country}<br />
-			<b>Transaction Amount:</b>
-			{props.data.transaction_amt}
+			<div className="container text-center">
+				<div className="row">
+					<div className='col-md-1'>
+						<img src={require('./assets/avatar.png')} className="img_icon"/>
+					</div>
+					<div className='col-md-2'>
+						<b>Id: </b>
+						{props.data.id}<br />
+					</div>
+					<div className='col-md-3'>
+						<b>From Country: </b>
+						{props.data.from_country}<br />
+					</div>
+					<div className='col-md-3'>
+						<b>To Country: </b>
+						{props.data.to_country}<br />
+					</div>
+					<div classname='col-md-3'>
+						{status ? (<div className="matched"><h6> Matched </h6></div>) : 
+							(<div className="pending"><h6> Pending </h6></div>)}
+						<b>Transaction Amount: </b>
+						{props.data.transaction_amt}
+					</div>
+				</div>
+			</div>
 			<hr />
 		</div>
 	);
@@ -36,8 +55,7 @@ class Dashboard extends Component {
 		        split_money: false,
 		        minimum_amount: null,
 		        exchange_in_person: false,
-		        currency: '$',
-		        countries: ['United States', 'France', 'England', 'Canada'],
+		        countries: [{name: 'United States', currency: 'USD', currency_symbol: '$'},],
 		};
 
 		this.getUserRequests = this.getUserRequests.bind(this);
@@ -55,7 +73,6 @@ class Dashboard extends Component {
 			this.getUserRequests();
 		}
     }
-
 	checkIfLoggedIn() {
 		fetch('/login', {
 			credentials: 'include'
@@ -128,7 +145,15 @@ class Dashboard extends Component {
 		          console.log("request form submitted");
 		        }
 	    }).then((body) => {
+	    		//Update the user requests
 		    	this.getUserRequests();
+
+		    	//Clear the rewuest form
+		    	this.setState({
+    				from_country: '',
+    				to_country: '',
+    				transaction_amt: 0.00,
+    			});
 		        console.log(body);
 	    });
 
@@ -175,7 +200,7 @@ class Dashboard extends Component {
 							              <option value="France" />
 							              <option value="England" />
 							              <option value="Poland" />
-							              <option value="South America" />
+							              <option value="South Africa" />
 							              <option value="India" />
 						            </datalist>
 
@@ -189,7 +214,7 @@ class Dashboard extends Component {
 							              <option value="France" />
 							              <option value="England" />
 							              <option value="Poland" />
-							              <option value="South America" />
+							              <option value="South Africa" />
 							              <option value="India" />
 						            </datalist>
 
@@ -199,8 +224,12 @@ class Dashboard extends Component {
 						          </label>
 						          <input type="number" id="transaction_amt" name="transaction_amt" placeholder="Enter Amount" min="0" step="0.01" value={this.state.transaction_amt} onChange={this.handleChange} />
 
+						        {/* Current Exchange Rate */}
+						        {/*<h5>Current Exchange Rate:</h5>*/}
+						     	
 
-						          <input type="submit" />
+
+						          <input type="submit" data-toggle="collapse" data-target="#request_form_wrapper"/>
 						        </form>
 					      	</div>
 

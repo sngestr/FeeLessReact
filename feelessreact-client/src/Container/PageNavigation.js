@@ -80,11 +80,15 @@ class PageNavigation extends Component {
 		      </Link>
 
 		      {isLoggedIn ? (
-		      	<div>
-		      		<p>hello! </p>
-		      		<button onClick={this.logout}>Logout</button>
-		      	</div> ) : (
-		      	<p>????</p>)}
+		      	<div class="top_right_side">
+		      		<p class="inline">Hello! </p>
+		      		<button onClick={this.logout} class="inline logout_btn">Logout</button>
+		      	</div> 
+		      	) : (
+		      	<div class="top_right_side">
+		      	</div>
+		      )}
+
     		</div>
   		);
 	}
